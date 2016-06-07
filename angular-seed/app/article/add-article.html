@@ -1,0 +1,45 @@
+<h1>Add Article</h1>
+<div class="container" ng-controller="createArticle">
+	<form name="forms" ng-app novalidate ng-submit="sendData()" >
+		<div class="row">
+	      <label class="caption" for="article.name">Title</label>
+	      <input type="text" name="name" ng-model="article.name" class="fright"  required />
+	      <span class="help-inline" ng-show="forms.name.$touched && forms.name.$error.required">Please enter title</span>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="row">
+		  <label class="caption">Category</label>
+		  <select name="category" ng-model="article.category" ng-options ="art.id as art.title for art in categories"  class="fright" required >
+	  	</select>
+		  <span class="help-inline" ng-show="forms.$submitted || forms.article.category.$touched && forms.article.category.$error.required">Please enter Roll number </span>
+		</div>
+		
+		<div class="row">
+		  <label class="caption" for="content">Content</label>
+		  <textarea name="content" ng-model="article.content"  class="fright" required /></textarea>
+		  <span class="help-inline" ng-show="forms.content.$touched && forms.content.$error.required">Please enter content </span>
+		  <div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<label class="caption" for="image">Image</label>
+			<input type="file" file-model="myFile"/>
+		</div>
+
+		<div class="row">
+		  <label class="caption">Status</label>
+		  <select name="status" ng-model="article.status" ng-options ="stat.id as stat.title for stat in statusList"  class="fright" required >
+	  	</select>
+		  <span class="help-inline" ng-show="forms.article.status.$touched && forms.article.status.$error.required">Please enter Roll number </span>
+		</div>
+
+		
+		<div class="clear"></div>
+			<div class="row">
+				<input type="submit" value="submit" ng-click='uploadFile()'/>
+			</div>
+	</form>
+	<div>{{PostDataResponse}}</div>
+</div>
