@@ -1,0 +1,51 @@
+<h1>Registration</h1>
+<form name="forms" novalidate >
+	<div class="container form-group" ng-controller="addUser">
+
+		<div class="row">
+			<label for="registration.name">Name</label>
+			<input type="text" name="name" ng-model="registration.name" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.name.$touched}' ng-show="(forms.$submitted || forms.name.$touched) && forms.name.$error.required">Please enter username</div>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="row">
+			<label for="registration.username">User name</label>
+			<input type="text" name="username" ng-model="registration.username" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.username.$touched}' ng-show="(forms.$submitted || forms.username.$touched) && forms.username.$error.required">Please enter username</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<label for="registration.password">Password</label>
+			<input type="password" name="password" ng-model="registration.password" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.password.$touched}' ng-show="(forms.$submitted || forms.password.$touched) && forms.password.$error.required">Please enter password</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<label for="registration.cpassword">Confirm Password</label>
+			<input type="password" name="cpassword" ng-model="registration.cpassword" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.cpassword.$touched}' ng-show="(forms.$submitted || forms.cpassword.$touched) && forms.cpassword.$error.required">Please Re-enter password</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<label for="registration.email">Email</label>
+			<input type="text" name="email" ng-model="registration.email" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.email.$touched}' ng-show="(forms.$submitted || forms.email.$touched) && (forms.email.$error.required || forms.email.$error.email)">Please enter your email address</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<label for="registration.phone">Phone</label>
+			<input type="text" name="phone" ng-model="registration.phone" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.phone.$touched}' ng-show="(forms.$submitted || forms.phone.$touched) && forms.phone.$error.required">Please enter your phone number</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<input type="submit" value="submit" ng-click="validate()" class="btn btn-default" ng-disabled='!forms.$valid' />
+		</div>
+	</div>
+</form>

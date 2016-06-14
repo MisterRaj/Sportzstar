@@ -1,20 +1,20 @@
-<h1>Add Article</h1>
-<form name="forms" novalidate ng-submit="sendData()" >
-	<div class="container form-group" ng-controller="createArticle">
+<h1>Edit Article</h1>
+<form name="forms" novalidate >
+	<div class="container form-group" ng-controller="editArticle">
 		<div class="row">
 			<label for="article.title">Title</label>
 			<input type="text" name="title" ng-model="article.title" class="fright form-control"  required />
 			<div class="help-inline" ng-class='{ "alert-danger" : forms.title.$touched}' ng-show="(forms.$submitted || forms.title.$touched) && forms.title.$error.required">Please enter title</div>
 		</div>
 		<div class="clear"></div>
-		
+
 		<div class="row">
 			<label class="caption">Category</label>
 			<select class="form-control"  name="category" ng-model="article.category" ng-options ="art.id as art.title for art in categories"  required >
 			</select>
 			<span class="help-inline" ng-show="(forms.$submitted || forms.article.category.$touched) && forms.article.category.$error.required">Please enter category </span>
 		</div>
-		
+
 		<div class="row">
 			<label class="caption" for="content">Content</label>
 			<textarea name="content" ng-model="article.content"  class="fright form-control" required /></textarea>
@@ -37,7 +37,7 @@
 		</div>
 		<div class="clear"></div>
 		<div class="row">
-			<input type="submit" value="submit" ng-click='uploadFile()' class="btn btn-default" ng-disabled='!forms.$valid' />
+			<input type="submit" value="submit" ng-click='submitArticle()' class="btn btn-default" ng-disabled='!forms.$valid' />
 		</div>
 	</div>
 </form>

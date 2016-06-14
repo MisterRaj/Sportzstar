@@ -1,0 +1,22 @@
+<h1>Login</h1>
+<form name="forms" novalidate ng-submit="sendData()" >
+	<div class="container form-group" ng-controller="createArticle">
+		<div class="row">
+			<label for="login.username">Username</label>
+			<input type="text" name="username" ng-model="login.username" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.username.$touched}' ng-show="(forms.$submitted || forms.username.$touched) && forms.username.$error.required">Please enter username</div>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="row">
+			<label for="login.password">Password</label>
+			<input type="password" name="password" ng-model="login.password" class="fright form-control"  required />
+			<div class="help-inline" ng-class='{ "alert-danger" : forms.password.$touched}' ng-show="(forms.$submitted || forms.password.$touched) && forms.password.$error.required">Please enter password</div>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<input type="submit" value="submit" class="btn btn-default" ng-disabled='!forms.$valid' />
+		</div>
+	</div>
+</form>

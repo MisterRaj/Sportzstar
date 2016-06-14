@@ -1,0 +1,14 @@
+Pages:
+	Approve/Reject
+	Login
+	Recent Articles
+
+Login:
+	Authentication on pages, display columns on list pages based on role. Showing status dropdown based on authentication.
+
+General:
+	Form fields proper validations.
+	Sending data through post should not be sent in the way we used.
+	Design PHP files better.
+	Use custom services/factory more.
+	Quote only strings.

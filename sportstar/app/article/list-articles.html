@@ -1,0 +1,20 @@
+<div class="col-md-5" ng-controller="listArticle">
+    <p><strong>Page:</strong> {{tableParams.page()}}
+    <p><strong>Count per page:</strong> {{tableParams.count()}}
+<p>Filter: <input class="form-control" type="text" ng-model="filter.$" /></p>
+    <table ng-table="tableParams" class="table">
+        <tr ng-repeat="article in $data">
+            <td data-title="'Title'" sortable="'title'">
+                {{article.title}}
+            </td>
+            <td data-title="'Content'" sortable="'content'">
+                {{article.content}}
+            </td>
+            <td data-title="'Id'" sortable="'content'">
+                <a href="#!/edit-article/{{article.id}}">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+            </td>            
+        </tr>
+    </table>
+</div>
