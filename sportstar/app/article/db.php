@@ -9,7 +9,7 @@ class conn{
 
 	public function addArticles($fields=""){
 		if($fields!=""){
-			$sql = "INSERT INTO `sportzstar`.`article` (`title`, `category`, `content`, `status`, `image`, `author_id` ) VALUES (".$fields.")";
+			$sql = "INSERT INTO `sportstar`.`article` (`title`, `category`, `content`, `status`, `image`, `author_id` ) VALUES (".$fields.")";
 			
 			if($this->connection->query($sql) === TRUE){
 				echo "Record created successfully";
@@ -21,7 +21,7 @@ class conn{
 
 	public function updateArticle($fields=array()){
 		if(!empty($fields)){
-			$sql = "UPDATE `sportzstar`.`article` ";
+			$sql = "UPDATE `sportstar`.`article` ";
 			foreach($fields as $key=>$value){
 				$sql.=" `".$key."` = "." `".$value."`,";
 			}
@@ -39,7 +39,7 @@ class conn{
 	public function getArticles($fields=""){
 		if($fields!=""){
 			$fields = substr($fields, 0, strlen($fields)-1);
-			$sql = "SELECT ".$fields." FROM `sportzstar`.`article`";
+			$sql = "SELECT ".$fields." FROM `sportstar`.`article`";
 			$result = $this->connection->query($sql);
 			
 			$output = array();
@@ -54,7 +54,7 @@ class conn{
 
 	public function getArticle($id=""){
 		if($id!=""){
-			$sql = "SELECT * FROM `sportzstar`.`article` where id = ".$id;
+			$sql = "SELECT * FROM `sportstar`.`article` where id = ".$id;
 			$result = $this->connection->query($sql);
 			
 			$output = array();

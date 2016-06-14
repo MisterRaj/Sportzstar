@@ -9,7 +9,7 @@ if(isset($_FILES['file']['error']) & $_FILES['file']['error'] === 0){
 	$tmp_name = $_FILES["file"]["tmp_name"];
     $name = $_FILES["file"]["name"];
 
-	if(move_uploaded_file($tmp_name, "/var/www/html/sportstar/Sportzstar/angular-seed/app/article/images/".$name)){
+	if(move_uploaded_file($tmp_name, "/var/www/html/sportstar/sportstar/angular-seed/app/article/images/".$name)){
 		echo "Success";
 	}
 	else
@@ -27,7 +27,7 @@ foreach ($fields as $key=>$val){
 	$fields[$key]="'".$val."'";
 }
 
-$conn = new conn('localhost','root','root','sportzstar');
+$conn = new conn('localhost','root','aspire@123','sportstar');
 $values = implode(",", array_values($fields));
 echo $values;exit;
 $conn->updateArticle($values);

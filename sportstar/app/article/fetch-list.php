@@ -7,6 +7,6 @@ $select_fields = "";
 foreach ($fields as $key=>$val){
 	$select_fields.=$val.",";
 }
-$conn = new conn('localhost','root','root','sportzstar');
+$conn = new conn('localhost','root','aspire@123','sportstar');
 $conn->getArticles($select_fields);
 ?>

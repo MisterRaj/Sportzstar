@@ -9,7 +9,7 @@ class conn{
 
 	public function addUser($fields=""){
 		if($fields!=""){
-			$sql = "INSERT INTO `sportzstar`.`user` (`name`, `user_name`, `email`, `password`, `phone` ) VALUES (".$fields.")";
+			$sql = "INSERT INTO `sportstar`.`user` (`name`, `user_name`, `email`, `password`, `phone` ) VALUES (".$fields.")";
 			
 			if($this->connection->query($sql) === TRUE){
 				echo "Record created successfully";
@@ -22,7 +22,7 @@ class conn{
 	public function getUsers($fields=""){
 		if($fields!=""){
 			$fields = substr($fields, 0, strlen($fields)-1);
-			$sql = "SELECT ".$fields." FROM `sportzstar`.`user`";
+			$sql = "SELECT ".$fields." FROM `sportstar`.`user`";
 			$result = $this->connection->query($sql);
 			
 			$output = array();

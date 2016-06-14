@@ -11,7 +11,7 @@ foreach ($params as $key=>$val){
 	$params[$key]="'".$val."'";
 }
 
-$conn = new conn('localhost','root','root','sportzstar');
+$conn = new conn('localhost','root','aspire@123','sportstar');
 $params = implode(",", array_values($params));
 $conn->addUser($params);
 
